@@ -1,7 +1,12 @@
 {
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
-    "source.organizeImports": "explicit",
-    "source.sortMembers": "explicit"
+    "source.organizeImports": "never",
+    "source.sortMembers": "never"
   }
+
+  // ===== BACKUP: ค่าเดิมจาก Expo template (กด Save แล้วจัดเรียง import / member ใหม่อัตโนมัติ) =====
+  // วิธีสลับกลับ: เปลี่ยน "never" สองบรรทัดด้านบนกลับเป็น "explicit"
+  // "source.organizeImports": "explicit",
+  // "source.sortMembers": "explicit"
 }

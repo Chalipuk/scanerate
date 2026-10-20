@@ -1,3 +1,18 @@
+/* ฟอนต์ Geist / Geist Mono โหลดจาก Google Fonts ใน src/app/+html.tsx (เฉพาะเว็บ) */
+:root {
+  --font-display:
+    Geist, Inter, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color Emoji;
+  --font-mono:
+    'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
+  --font-rounded: 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+}
+
+/* ===== BACKUP: ฟอนต์เดิมจาก Expo template =====
+ * วิธีสลับกลับ: ลบ :root ด้านบน แล้วเอาคอมเมนต์ของบล็อกนี้ออก
+
 :root {
   --font-display:
     Spline Sans, Inter, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji,
@@ -7,3 +22,5 @@
   --font-rounded: 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif;
   --font-serif: Georgia, 'Times New Roman', serif;
 }
+
+===== END BACKUP ===== */

@@ -7,6 +7,24 @@ import '@/global.css';
 
 import { Platform } from 'react-native';
 
+import { Palette, type ThemeColor } from './palette';
+
+export { Palette, type ThemeColor };
+
+type ColorTokens = Record<ThemeColor, string>;
+
+// เว็บใช้ CSS variables (ประกาศใน src/app/+html.tsx) — HTML ที่ render ล่วงหน้าจะเปลี่ยนสีตามโหมดมืดได้ทันที ไม่กระพริบเป็นสีขาวก่อน
+const webColors = Object.fromEntries(
+  Object.keys(Palette.light).map((key) => [key, `var(--color-${key})`])
+) as ColorTokens;
+
+export const Colors: Record<'light' | 'dark', ColorTokens> =
+  Platform.OS === 'web' ? { light: webColors, dark: webColors } : Palette;
+
+/* ===== BACKUP: สีเดิมจาก Expo template =====
+ * วิธีสลับกลับ: ลบ Palette / ThemeColor / webColors / Colors ด้านบน แล้วเอาคอมเมนต์ของบล็อกนี้ออก
+ * (ต้องลบ token ใหม่ border / accent / accentMuted ที่คอมโพเนนต์อื่นเรียกใช้ด้วย)
+
 export const Colors = {
   light: {
     text: '#000000',
@@ -25,6 +43,8 @@ export const Colors = {
 } as const;
 
 export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
+
+===== END BACKUP ===== */
 
 export const Fonts = Platform.select({
   ios: {
